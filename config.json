@@ -1,8 +1,19 @@
 {
-  "port": 8080,
+  "port": 8081,
   "pins": [
     {
-      "pin": 1
+      "pin": 1,
+      "writeable": true
+    },
+    {
+      "pin": 2
     }
-  ]
+  ],
+  "gpio": {
+    "type": "mock",
+    "options": {
+      "gpiomem": true,
+      "mapping": "physical"
+    }
+  }
 }
