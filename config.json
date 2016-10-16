@@ -11,7 +11,7 @@
     }
   ],
   "gpio": {
-    "type": "mock",
+    "type": "gpio",
     "options": {
       "gpiomem": true,
       "mapping": "physical"

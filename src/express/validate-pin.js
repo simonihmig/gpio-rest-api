@@ -6,6 +6,7 @@ module.exports = function validatePin(req, res, next, pin) {
 
   if (!pins.some((item) => item.pin === pin)) {
     res.sendStatus(403);
+    return;
   }
 
   req.pin = pin;
