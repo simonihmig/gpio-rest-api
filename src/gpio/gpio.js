@@ -8,7 +8,7 @@ module.exports = {
   read(pin) {
     let value = rpio.read(pin);
     if (invertedPins.includes(pin)) {
-      value = !value;
+      value = value === 0 ? 1 : 0;
     }
     return value;
   },
