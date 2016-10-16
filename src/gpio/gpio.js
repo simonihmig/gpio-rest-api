@@ -2,9 +2,15 @@
 
 const rpio = require('rpio');
 
+let invertedPins = [];
+
 module.exports = {
   read(pin) {
-    return rpio.read(pin);
+    let value = rpio.read(pin);
+    if (invertedPins.includes(pin)) {
+      value = !value;
+    }
+    return value;
   },
 
   write(pin, value) {
@@ -20,7 +26,10 @@ module.exports = {
       if (pin.writeable) {
         rpio.open(pin.pin, rpio.OUTPUT, typeof pin.default !== 'undefined' ? pin.default : 0);
       } else {
-        rpio.open(pin.pin, rpio.INPUT, typeof pin.pulldown !== 'undefined' ? (pin.pulldown ? rpio.PULL_DOWN : rpio.PULL_UP) : rpio.PULL_DOWN);
+        rpio.open(pin.pin, rpio.INPUT, typeof pin.pull !== 'undefined' ? (pin.pull === 'down' ? rpio.PULL_DOWN : rpio.PULL_UP) : undefined);
+        if (pin.pull === 'up') {
+          invertedPins.push(pin.pin);
+        }
       }
     })
   }

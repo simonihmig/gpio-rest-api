@@ -6,7 +6,8 @@
       "writeable": true
     },
     {
-      "pin": 5
+      "pin": 5,
+      "pull": "up"
     }
   ],
   "gpio": {
