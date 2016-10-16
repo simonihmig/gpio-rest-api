@@ -19,7 +19,7 @@ module.exports = {
     pins.forEach((pin) => {
       let mode = pin.writeable ? rpio.OUTPUT : rpio.INPUT;
       let value = typeof pin.default !== 'undefined' ? pin.default : 0;
-      rpio.open(pin, mode, value);
+      rpio.open(pin.pin, mode, value);
     })
   }
 }
