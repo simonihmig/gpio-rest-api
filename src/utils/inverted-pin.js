@@ -1,5 +1,5 @@
 function isInvertedPin(pin, config) {
-  let pinConfig = config.pins[pin];
+  let pinConfig = config.pins.find((c) => c.pin === pin);
 
   if (!pinConfig) throw new Error(`No pin config found for pin ${pin}`);
   return pinConfig.invert === true;

@@ -17,4 +17,4 @@ module.exports = {
   initPins(pins) {
     console.log('Init pins', pins);
   }
-}
+};
