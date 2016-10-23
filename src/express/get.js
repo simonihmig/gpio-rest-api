@@ -1,7 +1,7 @@
 "use strict";
 
 const serialize = require('../serializers/json');
-const getPinValue = require('../utils/is-inverted-pin').getPinValue;
+const getPinValue = require('../utils/inverted-pin').getPinValue;
 
 module.exports = function get(req, res) {
   let pin = req.pin;
