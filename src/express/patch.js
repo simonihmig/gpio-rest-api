@@ -10,9 +10,10 @@ module.exports = function get(req, res) {
   let pin = req.pin;
   let gpio = req.app.locals.gpio;
   let body = req.body;
-  let status = getPinValue(pin, body.status, req.app.locals.config);
+  let status = body.status
+  let pinStatus = getPinValue(pin, status, req.app.locals.config);
 
-  gpio.write(pin, status);
+  gpio.write(pin, pinStatus);
   let result = serialize(pin, status);
   res.json(result);
 }
