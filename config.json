@@ -3,35 +3,43 @@
   "pins": [
     {
       "pin": 3,
-      "writeable": true
+      "writeable": true,
+      "invert": true
     },
     {
       "pin": 5,
-      "writeable": true
+      "writeable": true,
+      "invert": true
     },
     {
       "pin": 7,
-      "writeable": true
+      "writeable": true,
+      "invert": true
     },
     {
       "pin": 11,
-      "writeable": true
+      "writeable": true,
+      "invert": true
     },
     {
       "pin": 13,
-      "writeable": true
+      "writeable": true,
+      "invert": true
     },
     {
       "pin": 15,
-      "writeable": true
+      "writeable": true,
+      "invert": true
     },
     {
       "pin": 16,
-      "writeable": true
+      "writeable": true,
+      "invert": true
     },
     {
       "pin": 18,
-      "writeable": true
+      "writeable": true,
+      "invert": true
     },
     {
       "pin": 22,

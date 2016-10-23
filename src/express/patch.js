@@ -1,6 +1,7 @@
 "use strict";
 
 const serialize = require('../serializers/json');
+const getPinValue = require('../utils/is-inverted-pin').getPinValue;
 
 module.exports = function get(req, res) {
   if (!req.body) return res.sendStatus(400);
@@ -9,7 +10,7 @@ module.exports = function get(req, res) {
   let pin = req.pin;
   let gpio = req.app.locals.gpio;
   let body = req.body;
-  let status = body.status;
+  let status = getPinValue(pin, body.status, req.app.locals.config);
 
   gpio.write(pin, status);
   let result = serialize(pin, status);
