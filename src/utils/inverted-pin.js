@@ -2,8 +2,7 @@ function isInvertedPin(pin, config) {
   let pinConfig = config.pins[pin];
 
   if (!pinConfig) throw new Error(`No pin config found for pin ${pin}`);
-
-  return pinConfig.inverted === true;
+  return pinConfig.invert === true;
 }
 
 function getPinValue(pin, value, config) {

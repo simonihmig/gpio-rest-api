@@ -24,7 +24,11 @@ module.exports = {
   initPins(pins) {
     pins.forEach((pin) => {
       if (pin.writeable) {
-        rpio.open(pin.pin, rpio.OUTPUT, typeof pin.default !== 'undefined' ? pin.default : 0);
+        let pinValue = typeof pin.default !== 'undefined' ? pin.default : 0;
+        if (pin.invert) {
+          pinValue === 0 ? 1 : 0;
+        }
+        rpio.open(pin.pin, rpio.OUTPUT, pinValue);
       } else {
         rpio.open(pin.pin, rpio.INPUT, typeof pin.pull !== 'undefined' ? (pin.pull === 'down' ? rpio.PULL_DOWN : rpio.PULL_UP) : undefined);
         if (pin.pull === 'up') {
