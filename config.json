@@ -7,6 +7,38 @@
     },
     {
       "pin": 5,
+      "writeable": true
+    },
+    {
+      "pin": 7,
+      "writeable": true
+    },
+    {
+      "pin": 11,
+      "writeable": true
+    },
+    {
+      "pin": 13,
+      "writeable": true
+    },
+    {
+      "pin": 15,
+      "writeable": true
+    },
+    {
+      "pin": 16,
+      "writeable": true
+    },
+    {
+      "pin": 18,
+      "writeable": true
+    },
+    {
+      "pin": 22,
+      "pull": "up"
+    },
+    {
+      "pin": 24,
       "pull": "up"
     }
   ],
