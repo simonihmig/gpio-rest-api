@@ -26,7 +26,7 @@ module.exports = {
       if (pin.writeable) {
         let pinValue = typeof pin.default !== 'undefined' ? pin.default : 0;
         if (pin.invert) {
-          pinValue === 0 ? 1 : 0;
+          pinValue = pinValue === 0 ? 1 : 0;
         }
         rpio.open(pin.pin, rpio.OUTPUT, pinValue);
       } else {
