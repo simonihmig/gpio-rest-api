@@ -14,6 +14,7 @@ module.exports = function bootstrap(config) {
   app.get('/api/gpio/:pin', require('./express/get'));
   app.put('/api/gpio/:pin', require('./express/put'));
   app.patch('/api/gpio/:pin', require('./express/patch'));
+  app.post('/api/gpio/:pin', require('./express/post'));
 
   app.param('pin', require('./express/validate-pin'));
 

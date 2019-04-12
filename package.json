@@ -1,10 +1,11 @@
 {
   "name": "gpio-rest-api",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Node.js REST-API server for reading from and writing to Raspberry PIs GPIO pins",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "node server.js"
   },
   "repository": {
     "type": "git",
